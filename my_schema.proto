@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package mqttmsg;
+
+// Time message with hour, minute and second
+message Time {
+  required uint32 hour   = 1;
+  required uint32 minute = 2;
+  required uint32 second = 3;
+}
+
+// Main message carrying temperature, publisher ID, and time
+message TemperatureMessage {
+  required string publisher_id = 1;
+  required float temperature   = 2;
+  required uint64 epoch        = 3;
+}
